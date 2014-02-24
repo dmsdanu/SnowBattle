@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="assets/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rancho&effect=ice">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rancho&effect=stonewash">
+	<style>
+      #game-name{
+        font-family: 'Rancho', serif;
+        font-size: 68px;
+      }
+      #player-name{
+        font-family: 'Rancho', serif;
+        font-size: 22px;
+      }
+    </style>
+</head>
+
+<body>
+
+<div class="frame">
+	
+	<div class="body">
+
+	<!-- Header Title -->
+	<center>
+		<h2 class = "font-effect-ice" id = "game-name" style="margin: 0 0 15px 0;color: #0000FF;text-shadow: 0 1px 2px #ccc;">
+			Snow Battle
+		</h2>
+	</center>
+
+	<br/>
+	<p>
+		<center>
+			<form action="start.html" method="GET">
+				<font class = "font-effect-stonewash" id="player-name">Player Name: </font><input type="text" id="player-name" name="playername"><br/>
+		<!--		Faction: 
+				<select name="faction">
+					<option value="Paladin" checked>Paladin</option>
+					<option value="Warrior">Warrior</option>
+				</select> -->
+				<!--<input type="text" id="faction" name="playername">-->
+				<br/>
+				<input type="submit" value="  Submit  " href="start.html" onclick="getInGame()">
+			</form>
+		</center>
+	</p>
+	<br/>
+
+	<div id='chart_div'></div>
+
+	<!-- Footer -->
+	<br/>
+	<div class="footer">
+		<a href="index.html">Home Page</a> - Snow Battle - Google Hackathon 2014 at WPI 
+	</div>
+
+</div>
+</body>
+
+<script>
+
+function getInGame() {
+//	alert(1);
+//	window.location.href = '/play.html';
+}
+
+</script>
+
+</html>

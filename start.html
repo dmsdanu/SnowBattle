@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <script type="text/javascript" src="/lib/sprite.js"></script>
+  <script type="text/javascript" src="/browserify.js"></script>
+  <script type="text/javascript" src="public/game.js"></script>
+  <script type="text/javascript" src="public/client.js"></script>
+  <script type="text/javascript" src="public/sprites/tank.js"></script>
+  <script type="text/javascript" src="public/sprites/shell.js"></script>
+  <script type="text/javascript" src="public/mapLoader.js"></script>
+  <script type="text/javascript" src="public/maps/coolMap.js"></script>
+  <script type="text/javascript" src="public/maps/defaultMap.js"></script>
+  <link href="assets/css/style.css" media="screen" rel="stylesheet" type="text/css"/>
+  <link href="assets/css/style2.css" media="screen" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rancho&effect=distressed-wood">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rancho&effect=fire">
+<script src="https://apis.google.com/js/plusone.js"></script>
+
+<script>
+
+function getPar(par) {
+	var local_url = document.location.href;
+   	var get = local_url.indexOf(par + "=");
+	if (get == -1) {
+		return false;
+	}
+	var get_par = local_url.slice(par.length + get + 1);
+	var nextPar = get_par.indexOf("&");
+	if (nextPar != -1) {
+		get_par = get_par.slice(0, nextPar);
+	}
+	return get_par;
+}
+
+</script>
+
+<style type="text/css">
+	
+#welcome-player{
+    font-family: 'Rancho', serif;
+    font-size: 22px;
+}
+#player-score{
+    font-family: 'Rancho', serif;
+    font-size: 22px;
+
+}
+</style>>
+
+</head>
+<body>
+<div class="frame">
+	<div class="body">
+		<div id='console'>
+				<font class="font-effect-distressed-wood" id ="welcome-player">Hello <b id='player'></b> --Your Score is:&nbsp&nbsp</font> <!--(<b id='faction'></b>)-->
+				<font class="font-effect-fire" id="player-score"><b id='score'></b></font>
+				<b id='max_score' style="display:none;"></b>
+		</div>
+		<div>
+		<g:plus style="text-align:right" action="share"></g:plus>
+		</div>
+		<div style="text-align: center;">
+
+		<div id='loading'>Loading...</div>
+			<div id="controls" style="display:none;">
+				<span id="result"></span> FPS
+				<br/>
+				<a href="?canvas=1" id="canvas-mode">Use canvas backend.</a> 
+				<a href="?html=1" id="html-mode">Use HTML backend</a>
+			</div>
+			</div>
+		</div>
+</div>
+<div>
+  <audio controls="controls" autoplay = "true" loop="loop" hidden = "true"><source src="assets/sound/bgm.mp3" type="audio/mpeg" /></audio>
+</div>
+</body>
+
+<script>
+
+document.getElementById('player').innerHTML = getPar("playername");
+
+
+
+if(window.location.href.indexOf('canvas') != -1) {
+	document.getElementById('canvas-mode').style.display = 'none';
+}
+else {
+	document.getElementById('html-mode').style.display = 'none';
+}
+</script>
+
+
+
+</html>
+
